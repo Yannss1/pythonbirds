@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2       #Atributo default, igual pra todas as classe
+
     def __init__(self, *filhos , nome=None, idade = 35):
         self.idade = idade
         self.nome = nome
@@ -18,6 +20,12 @@ if __name__ == '__main__':
         print(filhos.nome)
     luciano.sobrenome = 'Ramalho'
     del luciano.filhos
+    luciano.olhos = 1               #adiçao do atributo da classe no atributo de instancia
+    del luciano.olhos               #apagamos o atributo do objeto apenas, não da classe
     print(luciano.sobrenome)
     print(luciano.__dict__)
     print(Renzo.__dict__)
+    print(Pessoa.olhos)
+    print(luciano.olhos)
+    print(Renzo.olhos)
+    print(id (Pessoa.olhos), id (luciano.olhos), id(Renzo.olhos))
