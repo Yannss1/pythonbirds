@@ -8,6 +8,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
 if __name__ == '__main__':
     Renzo = Pessoa (nome = 'Renzo')
     luciano = Pessoa(Renzo, nome='luciano')
@@ -29,3 +37,5 @@ if __name__ == '__main__':
     print(luciano.olhos)
     print(Renzo.olhos)
     print(id (Pessoa.olhos), id (luciano.olhos), id(Renzo.olhos))
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())      #metodo estatico faz com que nao necessite o parametro, como mostrado na linha 18
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
